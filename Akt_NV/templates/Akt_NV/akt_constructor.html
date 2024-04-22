@@ -1,0 +1,188 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link type="text/css" href="{% static 'Akt_NV/css/styles.css' %}" rel="stylesheet" />
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="{% url 'akt_constructor' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Шапка</legend>
+            <div class="block">
+                <div class="block-title">
+                    Шапка
+                </div>
+                <div class="block-input">
+
+                    <div class="input">
+                        {{ form.bugor }}
+                    </div>
+                    <div class="input">
+                        {{ form.dolgnost }}
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="block">
+            <div class="block-title">
+                Состав комиссии
+            </div>
+            <div class="block-input">
+                <div class="input">
+                    {{ form.fio1 }}
+                </div>
+                <div class="input">
+                    {{ form.dt1 }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="input">
+                    {{ form.fio2 }}
+                </div>
+                <div class="input">
+                    {{ form.dt2 }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="input">
+                    {{ form.fio3 }}
+                </div>
+                <div class="input">
+                    {{ form.dt3 }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="input">
+                    {{ form.fio4 }}
+                </div>
+                <div class="input">
+                    {{ form.dt4 }}
+                </div>
+            </div>
+
+            <div class="block-input">
+                <div class="label">
+                    {{ form.target.label }}
+                </div>
+                <div class="input">
+                    {{ form.target }}
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-title">
+                Местоположение участка
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.region.label }}
+                </div>
+                <div class="input">
+                    {{ form.region }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.district.label }}
+                </div>
+                <div class="input">
+                    {{ form.district }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.city.label }}
+                </div>
+                <div class="input">
+                    {{ form.city }}
+                </div>
+            </div>
+
+            <div class="block-input">
+                <div class="label">
+                    {{ form.lesn.label }}
+                </div>
+                <div class="input">
+                    {{ form.lesn }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.uch_lesn.label }}
+                </div>
+                <div class="input">
+                    {{ form.uch_lesn }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.uch.label }}
+                </div>
+                <div class="input">
+                    {{ form.uch }}
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-title">
+                Общие сведения об участке
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.ozz.label }}
+                </div>
+                <div class="input">
+                    {{ form.ozz }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.lh_osob.label }}
+                </div>
+                <div class="input">
+                    {{ form.lh_osob }}
+                </div>
+            </div>
+            <div class="block-input">
+                <div class="label">
+                    {{ form.predl.label }}
+                </div>
+                <div class="input">
+                    {{ form.predl }}
+                </div>
+            </div>
+        </div>
+        <div class="block-buttons">
+            <div class="bt-input">
+                <div class="bt-label">
+                    {{ form.data_glr.label }}
+                </div>
+                <div class="bt">
+                    {{ form.data_glr }}
+                </div>
+            </div>
+            <div class="bt-input">
+                <div class="bt-label">
+                    {{ form.data_obsl.label }}
+                </div>
+                <div class="bt">
+                    {{ form.data_obsl }}
+                </div>
+            </div>
+
+            <div class="bt-input">
+                <button type="submit">Создать отчет</button>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>
